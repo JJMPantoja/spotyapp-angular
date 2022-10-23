@@ -2,26 +2,32 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.3.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Para correr el proyecto 
 
-## Code scaffolding
+Debes de crear en la pagina de Spotify developers una cuenta y crear un proyecto 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Una vez teniendo el proyecto debes de realizar una petición en postman para obtener el token que debes de cambiar en la ruta "src/app/services/SpotifyService".
 
-## Build
+Debes de modificar el valor que se encuentra justo enfrente de Bearer en los headers de la petición
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Para hacer la petición en Postman
 
-## Running unit tests
+Para hacer la petición en postam debes de agregar la sig URL en una petición POST
+https://accounts.spotify.com/api/token
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+En las opciones debes de seleccionar BODY y escoger el formato x-www-form-urlencode
 
-## Running end-to-end tests
+y deberas mandar tres parametros en el siguiente orden
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Further help
+|           KEY             |              Valor        |
+----------------------------|---------------------------|
+|       grant_type          |   client_credentials      |
+|       client_id           |   leer (a)                |
+|     client_secret         |   leer (b)                |
+----------------------------|---------------------------|
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+a) En su valor debes colocar el client_id que te de tu proyecto de spotify.
+b) En su valor debes colocar el client_secret que te de tu proyecto de spotify
