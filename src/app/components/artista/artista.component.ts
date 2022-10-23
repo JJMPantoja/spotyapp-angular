@@ -21,18 +21,6 @@ export class ArtistaComponent {
       this.getArtista(params['id']);
       this.getTopTracks(params['id']);
     });
-
-    // @ts-ignore
-    window.onSpotifyIframeApiReady = (IFrameAPI) => {
-      let element = document.getElementById('embed-iframe');
-      
-      let options = {
-        uri: 'spotify:episode:7makk4oTQel546B0PZlDM5',
-      };
-      // @ts-ignore
-      let callback = (EmbedController) => {};
-      IFrameAPI.createController(element, options, callback);
-    };
   }
 
   getArtista(id: string) {
